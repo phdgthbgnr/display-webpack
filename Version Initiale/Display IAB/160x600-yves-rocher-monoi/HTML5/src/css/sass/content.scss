@@ -1,0 +1,102 @@
+@import 'base/vars';
+@import 'base/reset';
+@import 'base/base';
+@import 'helpers/mixins';
+@import 'helpers/utils';
+
+// Insérer vos propres styles ici.
+.ecran {
+  .ecran0 {
+    background-color: $color1;
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .ecran1 {
+    img.flat1 {
+      transform-origin: 12px 113px; // center left
+    }
+
+    img.flat2 {
+      transform-origin: 51px 142px; // center left
+    }
+
+    img.new {
+      transform-origin: 83px 289px; // center
+    }
+  }
+
+  .ecran2 {
+    img.flat3 {
+      transform-origin: 46px 113px; // center right
+    }
+
+    img.new1 {
+      transform-origin: 80px 289px; // center
+    }
+  }
+
+  .ecran3 {
+    .pictos {
+      img.picto1 {
+        transform-origin: 81px 211px;
+        transform: rotate(-180deg);
+      }
+    }
+
+    img.pastille {
+      transform-origin: 79px 114px; // center
+    }
+  }
+
+  img.prod1 {
+    mask-image: url('img/mask1.png');
+    transform-origin: 51px 501px; // bottom center
+  }
+
+  img.prod2 {
+    mask-image: url('img/mask2.png');
+    transform-origin: 106px 514px; // bottom center
+  }
+
+  img.prod3 {
+    mask-image: url('img/mask3.png');
+  }
+
+  .ecran4 {
+    img.prod1f {
+      transform: translate(-6px, -77px);
+    }
+
+    img.prod2f {
+      transform: translate(8px, -93px);
+    }
+  }
+}
+
+.cta {
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 22px;
+  width: 143px;
+  height: 39px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+
+  /* Orange */
+  /* image en background */
+  background: #fff url('img/cta.png') top center no-repeat;
+  // background-size: 100% auto;
+
+  /* Sosh */
+  // border-radius: 4px;
+  // font-family: Tahoma, 'Trebuchet MS', Arial;
+
+  &:hover {
+    background-color: $color1;
+    background-position: bottom center;
+  }
+}

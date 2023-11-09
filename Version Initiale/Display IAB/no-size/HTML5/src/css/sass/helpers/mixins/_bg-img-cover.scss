@@ -1,0 +1,7 @@
+@mixin bg_img_cover($img) {
+  background-position: center;
+  background-image: url($img);
+  background-size: cover;
+
+  -ms-behavior: url(../backgroundsize.min.htc);
+}

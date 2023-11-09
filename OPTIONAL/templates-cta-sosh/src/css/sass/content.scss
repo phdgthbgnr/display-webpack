@@ -1,0 +1,141 @@
+@import 'base/vars';
+@import 'base/reset';
+@import 'base/base';
+@import 'helpers/mixins';
+@import 'helpers/utils';
+
+// Insérer vos propres styles ici.
+#wrapper,
+.ctas {
+  width: $width;
+  height: $height;
+  background-color: #4d4d4d;
+}
+
+.cta1 {
+  // style CTA 1 ligne à copier & à adapter --------------------------------------
+  .cta {
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 270px;
+    height: 29px;
+    border-radius: 5px;
+    transform-origin: top center;
+    svg#ctasvg {
+      top: 2px;
+      position: absolute;
+      width: 253px;
+      height: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    background-color: #fff;
+
+    &:hover {
+      background: #000000;
+      #cta-shapes path {
+        fill: #ffffff;
+      }
+    }
+  }
+}
+// -----------------------------------------------------------------
+
+.cta2 {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  // style CTA 2 lignes à copier & à adapter --------------------------------------
+  .cta {
+    bottom: 56px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 232px;
+    height: 73px;
+    border-radius: 5px;
+    transform-origin: top center;
+    svg#ctasvg {
+      top: 14px;
+      position: absolute;
+      width: 202px;
+      height: 54px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    background-color: #fff;
+
+    &:hover {
+      background: #000000;
+      #cta-shapes path {
+        fill: #ffffff;
+      }
+    }
+  }
+}
+// -----------------------------------------------------------------
+
+.cta3 {
+  position: absolute;
+  bottom: 150px;
+  width: 100%;
+  // style CTA corner 2 lignes à copier & à adapter --------------------------------------
+  .cta {
+    bottom: 0px;
+    right: 0px;
+    // transform: translateX(-50%);
+    width: 340px;
+    height: 104px;
+    border-top-left-radius: 26px;
+    transform-origin: bottom right;
+    svg#ctasvg {
+      position: absolute;
+      top: 17px;
+      left: 24px;
+      width: 292px;
+      height: 78px;
+      // transform: translateX(-50%);
+    }
+    background-color: #fff;
+
+    &:hover {
+      background: #000000;
+      #cta-shapes path {
+        fill: #ffffff;
+      }
+    }
+  }
+}
+
+.cta4 {
+  position: absolute;
+  bottom: 350px;
+  width: 100%;
+  // style CTA c3 lignes center à copier & à adapter --------------------------------------
+  .cta {
+    // bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 132px;
+    height: 80px;
+    border-radius: 5px;
+    transform-origin: bottom right;
+    svg#ctasvg {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 102px;
+      height: 63px;
+    }
+    background-color: #fff;
+
+    &:hover {
+      background: #000000;
+      #cta-shapes path {
+        fill: #ffffff;
+      }
+    }
+  }
+}
+// -----------------------------------------------------------------

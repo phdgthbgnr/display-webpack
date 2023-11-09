@@ -1,0 +1,86 @@
+@import 'base/vars';
+@import 'base/reset';
+@import 'base/base';
+@import 'helpers/mixins';
+@import 'helpers/utils';
+
+// Insérer vos propres styles ici.
+.ecran {
+  .ecran0 {
+    svg {
+      visibility: hidden;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      #wing12,
+      #wing21 {
+        opacity: 0;
+      }
+    }
+    background-color: #000;
+  }
+
+  .ecran1 {
+    .gradient {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: $width;
+      height: 150px;
+      background: rgb(0, 0, 0);
+      background: -moz-linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 91%);
+      background: -webkit-linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 91%);
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 91%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
+    }
+  }
+}
+
+.mentions {
+  background-color: #000;
+}
+
+.mentions-link {
+  width: 51px;
+  height: 8px;
+  left: 43px;
+  // transform: translateX(-50%);
+  bottom: 13px;
+  // border: 1px solid red;
+}
+
+.mentions-back {
+  right: 17px;
+  bottom: 17px;
+  width: 26px;
+  height: 26px;
+}
+
+.cta {
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 54px;
+  width: 148px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  font-size: 21px;
+  color: #fff;
+  background-color: $color1;
+  border: 1px solid #fff;
+
+  /* Orange */
+  font-family: Arial, Helvetica, sans-serif;
+  /* image en background */
+  // background: #de2554 url('img/cta.png') center center no-repeat;
+  // background-size: 100% auto;
+
+  /* Sosh */
+  // border-radius: 4px;
+  // font-family: Tahoma, 'Trebuchet MS', Arial;
+
+  &:hover {
+    color: #000;
+    background-color: #fff;
+  }
+}

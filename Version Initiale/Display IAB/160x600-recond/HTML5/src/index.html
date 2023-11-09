@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <link rel="stylesheet" href="styles.min.css">
+    <meta name="ad.size" content="width=<%= htmlWebpackPlugin.options.width %>,height=<%= htmlWebpackPlugin.options.height %>">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="color-scheme" content="dark">
+    <script type="text/javascript">
+        var clickTag = "http://www.google.com";
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <!-- le template de la bannière, divisé en plusieurs écrans -->
+        <div id="ecrans" class="ecran">
+
+            <div id="ecran1" class="ecran ecran1">
+                <img src="img/intro.png" class="intro intros" alt="Et vous, quand est-ce que vous passez chez" width="160" height="600">
+                <img src="img/intro1.png" class="intro intros" alt="" width="160" height="600">
+                <img src="img/intro2.png" class="intro intros" alt="" width="160" height="600">
+                <img src="img/intro3.png" class="intro intros" alt="" width="160" height="600">
+                <img src="img/intro4.png" id="intro" class="intros" alt="" width="160" height="600">
+            </div>
+
+
+            <div id="arrows" class="ecran arrows">
+              <img inline src="<%= htmlWebpackPlugin.options.distSVGPath %>/img/160x600fleches_160x600.svg" id="fleches">
+            </div>
+           
+
+            <div id="ecran2" class="ecran ecran2">
+                <img src="img/txt.png" id="txt" class="txt" alt="Jusqu’à" width="160" height="600">
+                <img src="img/txt1.png" id="txt1" class="txt1" alt="300€* " width="160" height="600">
+                <img src="img/txt2.png" id="txt2" class="txt2" alt="de remise immédiate " width="160" height="600">
+                <img src="img/txt3.png" id="txt3" class="txt3" alt="sur une sélection de mobiles  " width="160" height="600">
+                <img src="img/nom-tel.png" id="nom" class="nom" alt="Xiaomi Mi 11i 5G " width="160" height="600">
+                <img src="img/xiaomi-face.png" id="tel" class="tel" alt="Xiaomi Mi 11i 5G" width="160" height="600">
+                <img src="img/das.png" id="das" alt="DAS tête : 0,537 W/kg - Tronc : 0,768 W/kg - Membres : 1,875 W/kg" width="160" height="600">
+                <img src="img/kit.png" id="kit" alt="Kit mains-libres recommandé" width="160" height="600">
+            </div>
+
+
+            <div id="ecran3" class="ecran ecran3">
+                <img src="img/paiement.png" id="paiement" alt="Paiement en 4 fois sans frais" width="160" height="600">
+            </div>
+            
+            
+            <div id="ecran4" class="ecran ecran4">
+                <img src="img/logo.png" id="logo" alt="Sosh" width="160" height="600">
+                <img src="img/logo1.png" id="logo1" alt="par Orange" width="160" height="600">
+            </div>
+
+
+            <div id="ecran5" class="ecran ecran5">
+                <img src="img/txt.png" id="txtf" class="txt" alt="Jusqu’à" width="160" height="600">
+                <img src="img/txt1.png" id="txt1f" class="txt1" alt="300€* " width="160" height="600">
+                <img src="img/txt2.png" id="txt2f" class="txt2" alt="de remise immédiate " width="160" height="600">
+                <img src="img/txt3.png" id="txt3f" class="txt3" alt="sur une sélection de mobiles  " width="160" height="600">
+                <img src="img/xiaomi-face.png" id="telf" class="telf" alt="Xiaomi Mi 11i 5G" width="160" height="600">
+                <img src="img/das.png" id="dasf" alt="DAS tête : 0,537 W/kg - Tronc : 0,768 W/kg - Membres : 1,875 W/kg" width="160" height="600">
+                <img src="img/kit.png" id="kitf" alt="Kit mains-libres recommandé" width="160" height="600">
+                <img src="img/paiement.png" id="paiementf" alt="Paiement en 4 fois sans frais" width="160" height="600">
+            </div>
+
+
+            <div id="common" class="ecran common">
+                <img src="img/claim.png" id="claim" class="claim" alt="Les Jours" width="160" height="600">  
+                <img src="img/claim1.png" id="claim1" class="claim1"  alt="Sosh" width="160" height="600">  
+            </div>
+
+            <img src="img/footer.png" id="footer" alt="Jusqu'au 24/05/2022 - Mentions légales" width="160" height="600">
+
+
+        </div>
+        <!--les images de layouts (identiques peu importe les écrans) logo, cta, ...-->
+
+        <div id="mentions-link" class="mentions-link"></div>
+
+
+        <div id="mentions" class="mentions">
+            <img src="img/ml.png" id="mentions-text" width="160" height="600" />
+            <svg id="mentions-back" class="mentions-back" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24.6 24.5" width="24"height="24" style="enable-background:new 0 0 24.6 24.5;" xml:space="preserve"><style type="text/css">.st0 {fill: #fff;}</style><polygon class="st0" points="24.6,9.5 10.5,9.5 16.1,3.9 12.2,0 0,12.2 3.9,16.1 3.9,16.1 12.2,24.5 16.1,20.6 10.6,15 24.6,15 " /></svg>
+        </div>
+
+        <a href="javascript:window.open(window.clickTag,' _blank');void(0);" id="clickTag">
+            <span id="CTA" class="cta">
+                En profiter
+            </span>
+            <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=">
+        </a>
+
+
+    </div>
+
+
+
+
+    <div id="maskintro"></div>
+    <script src="scripts.min.js"></script>
+</body>
+
+</html>

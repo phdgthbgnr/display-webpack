@@ -1,0 +1,23 @@
+//
+//  Preserves ratio of a block.
+//
+//  @see http://www.mademyday.de/css-height-equals-width-with-pure-css.html
+//
+@mixin blockRatio($ratio: 1) {
+  $ratio: 1 / $ratio * 100%;
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    padding-top: $ratio;
+  }
+
+  & > * {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+}

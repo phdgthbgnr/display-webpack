@@ -1,0 +1,112 @@
+@import 'base/vars';
+@import 'base/reset';
+@import 'base/base';
+@import 'helpers/mixins';
+@import 'helpers/utils';
+
+// Insérer vos propres styles ici.
+.ecran {
+  background-color: transparent;
+
+  img.nom {
+    left: auto;
+    right: 0;
+    transform-origin: 230px 125px; // center left
+  }
+
+  .ecran1,
+  .ecran4 {
+    background-color: $color1;
+  }
+  .arrows {
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      #fleches1,
+      #fleches2,
+      #fleches3,
+      #fleches4 {
+        opacity: 0;
+      }
+    }
+  }
+
+  // .ecran2 {
+  //   img.tel {
+  //     transform-origin: 225px 419px; // bottom center
+  //   }
+  // }
+
+  .ecran5 {
+    img.telf {
+      transform: translateX(93px); // same as JS screen3
+    }
+  }
+
+  .common {
+    img.claim {
+      transform-origin: 485px 72px; // center
+    }
+
+    img.claim1 {
+      transform-origin: 484px 172px; // center
+    }
+  }
+}
+
+.mentions {
+  background-color: $color1;
+}
+
+.mentions-link {
+  width: 124px;
+  height: 13px;
+  right: 57px;
+  bottom: 42px;
+  // border: 1px solid black;
+}
+
+.mentions-back {
+  right: 18px;
+  bottom: 18px;
+  width: 31px;
+  height: 31px;
+}
+
+.cta {
+  bottom: 94px;
+  right: 18px;
+  // transform: translateX(-50%);
+  width: 201px;
+  height: 62px;
+  line-height: 62px;
+  text-align: center;
+  font-size: 31px;
+  color: #000;
+  background-color: $color2;
+
+  /* Orange */
+  // font-family: Arial, Helvetica, sans-serif;
+  /* image en background */
+  // background: #de2554 url('img/cta.png') center center no-repeat;
+  // background-size: 100% auto;
+
+  /* Sosh */
+  border-radius: 5px;
+  font-family: Tahoma, 'Trebuchet MS', Arial;
+
+  &:hover {
+    color: $color2;
+    background: #000000;
+  }
+}
+
+// .cta.invert {
+//   color: $color1;
+//   background-color: $color3;
+//   &:hover {
+//     color: $color1;
+//     background-color: #000000;
+//   }
+// }

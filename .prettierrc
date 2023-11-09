@@ -1,0 +1,20 @@
+{
+  "trailingComma": "es5",
+  "singleQuote": true,
+  "overrides": [
+    {
+      "files": ["*.css", "*.html"],
+      "options": {
+        "printWidth": 200,
+        "singleQuote": false
+      }
+    },
+    {
+      "files": ["*.js", "*.scss"],
+      "options": {
+        "printWidth": 200,
+        "singleQuote": true
+      }
+    }
+  ]
+}
