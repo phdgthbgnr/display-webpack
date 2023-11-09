@@ -45,7 +45,7 @@ export default class SnowCanvas {
     /**
      * register effect
      */
-    this.TL.registerEffect({
+    this.TL.GSAP.registerEffect({
       name: name,
       effect: (targets, config) => {
         const tl = new this.TL.GSAP.timeline({});

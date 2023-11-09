@@ -26,8 +26,7 @@ export default class ExplodeWithShapes {
     this.splitHd = this.splitHeight / 2;
     this.assets = {
       star: {
-        path:
-          'M20,0l6.18,12.51,13.82,2L30,24.26,32.37,38,20,31.52,7.64,38,10,24.26,0,14.52l13.82-2S16.08,8,16.49,7.11Z',
+        path: 'M20,0l6.18,12.51,13.82,2L30,24.26,32.37,38,20,31.52,7.64,38,10,24.26,0,14.52l13.82-2S16.08,8,16.49,7.11Z',
         width: 40,
         height: 38,
         path2d: '',
@@ -39,8 +38,7 @@ export default class ExplodeWithShapes {
         path2d: '',
       },
       blob: {
-        path:
-          'M44,10.09c0-8.54-10.63-12.2-16.09-6.26A1.71,1.71,0,0,1,26,4.28a15.36,15.36,0,0,0-11.77.54,1.75,1.75,0,0,1-2.42-1A5.71,5.71,0,0,0,2.62,1.52a5.61,5.61,0,0,0,2.84,9.55c3,1.11-.18,4.87.44,7.16C5.3,21,.14,20.07,0,26.48c0,6.43,7.82,9.26,12.1,5.11a1.74,1.74,0,0,1,2-.35c1.64,1.32,4.87.57,5.76,2.65,7,19,32.24.59,16.34-11.73C32.21,17.91,43.91,20.11,44,10.09Z',
+        path: 'M44,10.09c0-8.54-10.63-12.2-16.09-6.26A1.71,1.71,0,0,1,26,4.28a15.36,15.36,0,0,0-11.77.54,1.75,1.75,0,0,1-2.42-1A5.71,5.71,0,0,0,2.62,1.52a5.61,5.61,0,0,0,2.84,9.55c3,1.11-.18,4.87.44,7.16C5.3,21,.14,20.07,0,26.48c0,6.43,7.82,9.26,12.1,5.11a1.74,1.74,0,0,1,2-.35c1.64,1.32,4.87.57,5.76,2.65,7,19,32.24.59,16.34-11.73C32.21,17.91,43.91,20.11,44,10.09Z',
         width: 44,
         height: 42,
         path2d: '',
@@ -124,7 +122,7 @@ export default class ExplodeWithShapes {
      * register effect
      */
     let direction = '';
-    this.TL.registerEffect({
+    this.TL.GSAP.registerEffect({
       name: name,
       effect: (targets, config) => {
         direction = config.direction;
@@ -206,17 +204,7 @@ export default class ExplodeWithShapes {
       let rad = (rotate * Math.PI) / 180;
       this.ctx.rotate(rad);
       this.ctx.globalAlpha = opacity;
-      this.ctx.drawImage(
-        this.image,
-        ax,
-        ay,
-        this.splitWidth,
-        this.splitHeight,
-        -splitWd,
-        -splitHd,
-        this.splitWidth * scale,
-        this.splitHeight * scale
-      );
+      this.ctx.drawImage(this.image, ax, ay, this.splitWidth, this.splitHeight, -splitWd, -splitHd, this.splitWidth * scale, this.splitHeight * scale);
 
       this.ctx.rotate(-rad);
       this.ctx.translate(-offsetX, -offsetY);

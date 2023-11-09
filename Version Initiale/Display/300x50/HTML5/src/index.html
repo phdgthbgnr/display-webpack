@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <link rel="stylesheet" href="styles.min.css">
+    <meta name="ad.size" content="width=<%= htmlWebpackPlugin.options.width %>,height=<%= htmlWebpackPlugin.options.height %>">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="color-scheme" content="dark">
+    <script type="text/javascript">
+        var clickTag = "http://www.google.com";
+    </script>
+</head>
+
+<body>
+    <div id="maskintro"></div>
+    <div id="wrapper">
+
+        <!-- le template de la bannière, divisé en plusieurs écrans -->
+
+        <div id="ecrans" class="ecran">
+           
+            
+            <div id="ecran0" class="ecran ecran0">
+                <img src="img/logo.png" id="logo" class="logo" alt="Sosh" width="300" height="50">
+            </div>
+
+
+            <div id="ecran1" class="ecran ecran1">
+                <!-- <img src="img/visu1.png" class="visu1 visus" class alt="" width="311" height="250"> -->
+                <!-- <img src="img/txt1.png" id="txt1" class="txt1" alt="Sans forfait et sans engagement" width="728" height="90"> -->
+                <!-- <img src="img/das.png" id="das" alt="Xiaomi Redmi Note 12 Pro 5G - Das tête: 0,99W/kg, tronc: 0,99W/kg,membres: 2,590K/kg" width="728" height="90"> -->
+                <img src="img/logo1.png" id="logo1" class="logo1" alt="Xiaomi" width="300" height="50">
+                <img src="img/claim.png" id="claim" alt="Xiaomi Série Redmi Note 12" width="300" height="50">
+                <img src="img/rect.png" id="rect" class="rect" alt="" width="300" height="50">
+                <img src="img/visu.png" class="visu visus" class alt="" width="300" height="50">
+                <img src="img/tel1.png" class="tel21 visus tels" alt="Xiaomi Redmi Note 12 Pro 5G" width="300" height="50">
+                <img src="img/tel.png" class="tel2 visus tels" alt="Xiaomi Redmi Note 12 Pro 5G" width="300" height="63">
+                <img src="img/txt.png" id="txt" class="txt" alt="à partir de 199€" width="300" height="50">
+                <img src="img/footer.png" id="footer" alt="Orange - Mentions" width="300" height="50">
+            </div>
+            
+            
+            <div id="ecran2" class="ecran ecran2">
+                <!-- <img src="img/clic.png" id="clic" alt="Disponible en Click & Collect" width="728" height="90"> -->
+                <!-- <img inline src="<%= htmlWebpackPlugin.options.srcSVGPath %>/img/vectos_<%= htmlWebpackPlugin.options.width %>x<%= htmlWebpackPlugin.options.height %>.svg" class="vectos"> -->
+            </div>
+
+
+            <!--les images de layouts (identiques peu importe les écrans) logo, cta, ...-->
+
+
+        </div>
+
+
+
+        <a href="javascript:window.open(window.clickTag,' _blank');void(0);" id="clickTag">
+            <span id="CTA" class="cta">
+                Découvrir
+            </span>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=">
+        </a>
+
+
+    </div>
+
+    
+    <script src="scripts.min.js"></script>
+    
+</body>
+
+</html>

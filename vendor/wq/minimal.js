@@ -4,7 +4,7 @@
  * on doit passer par des objets
  */
 
-import { gsap, TweenLite, TimelineLite, TimelineMax } from '../gsapcore/gsap-core.js';
+import { gsap, TweenLite, TimelineLite, TimelineMax } from '@core/gsap-core.js';
 // import { CSSPlugin } from '../CSSPlugin.js';
 // var gsapWithCSS = gsap.registerPlugin(CSSPlugin) || gsap,
 // to protect from tree shaking

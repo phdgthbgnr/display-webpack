@@ -103,12 +103,12 @@ export default class TL2 {
       console.log('Le nom de la timeLine est déjà présent : ' + name);
     } else {
       this.GSAP.defaults({
-        onUpdate: function () {
-          const o = this.targets()[0];
-          for (const key in o) {
-            // console.log(key);
-          }
-        },
+        // onUpdate: function () {
+        //   const o = this.targets()[0];
+        //   for (const key in o) {
+        //     // console.log(key);
+        //   }
+        // },
       });
       this.tLs[name] = new this.GSAP.timeline({
         id: name,
@@ -143,7 +143,7 @@ export default class TL2 {
 
   rTL(name) {
     if (this.isTimeLinePresent(name)) {
-      this.tLs[name].kill;
+      this.tLs[name].kill();
       this.tLs[name] = null;
       delete this.tLs[name];
     }

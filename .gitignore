@@ -1,6 +1,8 @@
 **/node_modules/
 .idea/
+*.logs
 **/bundle-stats.html
 
 **/dst/img/*.svg
 **.logs
+**.DS_Store

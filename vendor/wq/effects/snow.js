@@ -29,7 +29,7 @@ export default class Snow {
     /**
      * register effect
      */
-    this.TL.registerEffect({
+    this.TL.GSAP.registerEffect({
       name: name,
       effect: (targets, config) => {
         targets[0].childNodes.forEach((element, i, a) => {

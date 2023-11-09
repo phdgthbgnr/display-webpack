@@ -80,7 +80,7 @@ export default class Explode {
      * register effect
      */
     let direction = '';
-    this.TL.registerEffect({
+    this.TL.GSAP.registerEffect({
       name: name,
       effect: (targets, config) => {
         direction = config.direction;
@@ -161,17 +161,7 @@ export default class Explode {
       this.ctx.translate(canvasX + this.splitWd, canvasY + this.splitHd);
       let rad = (this.grid[i].rotate * Math.PI) / 180;
       this.ctx.rotate(rad);
-      this.ctx.drawImage(
-        this.image,
-        this.grid[i].ax,
-        this.grid[i].ay,
-        this.splitWidth,
-        this.splitHeight,
-        -splitWd,
-        -splitHd,
-        this.splitWidth * scale,
-        this.splitHeight * scale
-      );
+      this.ctx.drawImage(this.image, this.grid[i].ax, this.grid[i].ay, this.splitWidth, this.splitHeight, -splitWd, -splitHd, this.splitWidth * scale, this.splitHeight * scale);
       this.ctx.rotate(-rad);
       this.ctx.translate(-(canvasX + this.splitWd), -(canvasY + this.splitHd));
     }

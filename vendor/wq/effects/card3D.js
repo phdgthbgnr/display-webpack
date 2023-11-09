@@ -30,7 +30,7 @@ export default class card3D {
     //   backfaceVisibility: 'hidden',
     // });
 
-    this.TL.registerEffect({
+    this.TL.GSAP.registerEffect({
       name: name,
       defaults: {
         duration: 1,

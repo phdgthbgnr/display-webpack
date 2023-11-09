@@ -78,7 +78,7 @@ export default class Dissolve {
     /**
      * register effect
      */
-    this.TL.registerEffect({
+    this.TL.GSAP.registerEffect({
       name: name,
       effect: (targets, config) => {
         if (config.direction == 'to') {
@@ -164,17 +164,7 @@ export default class Dissolve {
       this.ctx.translate(canvasX + this.splitWd, canvasY + this.splitHd);
       // this.ctx.translate(canvasX, canvasY);
       // this.ctx.rotate(this.grid[i].rotate);
-      this.ctx.drawImage(
-        this.image,
-        this.grid[i].ax,
-        this.grid[i].ay,
-        this.splitWidth,
-        this.splitHeight,
-        -splitWds,
-        -splitHds,
-        this.splitWidth * scale,
-        this.splitHeight * scale
-      );
+      this.ctx.drawImage(this.image, this.grid[i].ax, this.grid[i].ay, this.splitWidth, this.splitHeight, -splitWds, -splitHds, this.splitWidth * scale, this.splitHeight * scale);
       this.ctx.translate(-(canvasX + this.splitWd), -(canvasY + this.splitHd));
       // this.ctx.rotate(-this.grid[i].rotate);
       // this.ctx.translate(-canvasX, -canvasY);

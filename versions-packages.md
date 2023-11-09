@@ -59,3 +59,7 @@ https://github.com/bbozzay/webpack-dynamic-entries
 #### regex dimension from folder name
 
 ([0-9]+)(?:[xX]{1})([0-9]+)
+
+#### replace image files extension in html (for webp)
+
+https://www.npmjs.com/package/html-replace-webpack-plugin

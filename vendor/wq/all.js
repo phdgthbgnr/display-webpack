@@ -1,5 +1,5 @@
-import gsap from '../gsapcore/gsap-core.js';
-import CSSPlugin from './gsapcore/CSSPlugin.js';
+import gsap from '@core/gsap-core.js';
+import CSSPlugin from '@core/CSSPlugin.js';
 var gsapWithCSS = gsap.registerPlugin(CSSPlugin) || gsap, // to protect from tree shaking
   TweenMaxWithCSS = gsapWithCSS.core.Tween;
 
@@ -42,19 +42,19 @@ export {
   interpolate,
   shuffle,
   selector,
-} from '../gsapcore/gsap-core.js';
-export * from '../gsapcore/CSSRulePlugin.js';
-export * from '../gsapcore/CustomEase.js';
-export * from '../gsapcore/Draggable.js';
-export * from '../gsapcore/EaselPlugin.js';
-export * from '../gsapcore/EasePack.js';
-export * from '../gsapcore/Flip.js';
-export * from '../gsapcore/MotionPathPlugin.js';
-export * from '../gsapcore/Observer.js';
-export * from '../gsapcore/PixiPlugin.js';
-export * from '../gsapcore/ScrollToPlugin.js';
-export * from '../gsapcore/ScrollTrigger.js';
-export * from '../gsapcore/TextPlugin.js';
+} from '@core/gsap-core.js';
+export * from '@core/CSSRulePlugin.js';
+export * from '@core/CustomEase.js';
+export * from '@core/Draggable.js';
+export * from '@core/EaselPlugin.js';
+export * from '@core/EasePack.js';
+export * from '@core/Flip.js';
+export * from '@core/MotionPathPlugin.js';
+export * from '@core/Observer.js';
+export * from '@core/PixiPlugin.js';
+export * from '@core/ScrollToPlugin.js';
+export * from '@core/ScrollTrigger.js';
+export * from '@core/TextPlugin.js';
 
 //BONUS EXPORTS
 //export * from "./DrawSVGPlugin.js";

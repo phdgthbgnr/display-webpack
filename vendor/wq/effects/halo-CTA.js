@@ -1,6 +1,6 @@
 'use strict';
 
-import { opposed } from '../modules/mathlib';
+import { opposedAA } from '../helpers/trigo-lib';
 
 export default class haloCTA {
   constructor(tl) {
@@ -39,7 +39,7 @@ export default class haloCTA {
         // );
       }
     }
-    _self.TL.registerEffect({
+    _self.TL.GSAP.registerEffect({
       name: name,
       defaults: {
         duration: 1,

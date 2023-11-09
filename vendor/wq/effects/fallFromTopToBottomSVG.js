@@ -13,7 +13,7 @@ export default class fallFromTopSVG {
     /**
      * register effect
      */
-    this.TL.registerEffect({
+    this.TL.GSAP.registerEffect({
       name: name,
       defaults: {
         startAt: 0,

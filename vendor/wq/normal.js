@@ -21,8 +21,8 @@ import {
   TweenLite,
   TimelineLite,
   TimelineMax,
-} from '../gsapcore/gsap-core.js';
-import { CSSPlugin } from '../gsapcore/CSSPlugin.js';
+} from '@core/gsap-core.js';
+import { CSSPlugin } from '@core/CSSPlugin.js';
 var gsapWithCSS = gsap.registerPlugin(CSSPlugin) || gsap,
   // to protect from tree shaking
   TweenMaxWithCSS = gsapWithCSS.core.Tween;

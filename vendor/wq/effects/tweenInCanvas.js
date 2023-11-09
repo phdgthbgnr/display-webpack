@@ -12,6 +12,7 @@ export default class tweenInCanvas {
     this.cHeight = 0; //. canvas.height;
     this.maxLoop = loops;
     this.nbLoops = 0;
+    this.tickGSAPWhileHidden(true);
   }
 
   addEffect(name, props) {
@@ -21,7 +22,7 @@ export default class tweenInCanvas {
     const bounds = c.getBoundingClientRect();
     this.cWidth = bounds.width;
     this.cHeight = bounds.height;
-    var ref = this;
+    const ref = this;
     this.uniqID = this.IDuniq();
     /**
      * register effect
@@ -52,14 +53,15 @@ export default class tweenInCanvas {
           scale: config.scale,
           rotate: config.rotate,
           ease: config.ease,
-          repeat: config.repeat,
           stagger: config.stagger,
+          repeat: config.repeat,
           globalAlpha: config.globalAlpha,
           onStart: config.onStart,
           killAtEnd: KAE,
           renderAtStart: RAS,
-          started: STD,
           defaultAtStart: DAS,
+          started: STD,
+          enable: config.enable,
           onComplete: function (ref) {
             if (this.vars.killAtEnd) {
               for (let i = 0; i < this.targets().length; i++) {
@@ -77,7 +79,6 @@ export default class tweenInCanvas {
               target.started = true;
             }
             if (!ref.isPlaying && ref.Tick == null && ref.assets.length > 0) {
-              console.log(ref.assets);
               ref.addTicker();
             }
           },
@@ -85,7 +86,7 @@ export default class tweenInCanvas {
         });
       },
       defaults: {
-        direction: 'to',
+        // direction: 'to',
         duration: 1,
         x: 0,
         y: 0,
@@ -93,9 +94,10 @@ export default class tweenInCanvas {
         rotate: 0,
         ease: 'none',
         repeat: 0,
-        transformOrigin: '50% 50%',
-        globalAlpha: 1,
         stagger: 0,
+        globalAlpha: 1,
+        transformOrigin: '50% 50%',
+        // onStart: null,
         killAtEnd: false, // if true remove assets from render list
         /**
          * render only when onStart is fired
@@ -159,14 +161,14 @@ export default class tweenInCanvas {
       height: height,
       scale: 1,
       rotate: 0,
+      ease: 'none',
+      stagger: 0,
       transformOrigin: trf,
       globalAlpha: 1,
-      stagger: 0,
       killAtEnd: k,
       renderAtStart: r,
       defaultAtStart: r,
       started: s,
-      ease: 'none',
       enable: true,
     };
     return props;
@@ -199,7 +201,7 @@ export default class tweenInCanvas {
   }
 
   render(a) {
-    const { id, image, x, y, width, height, scale, rotate, transformOrigin, globalAlpha } = a;
+    const { duration, id, image, x, y, width, height, scale, rotate, transformOrigin, globalAlpha } = a;
     const { w, h } = { w: width * scale, h: height * scale };
     // const { w2, h2 } = { w2: w / 2, h2: h / 2 }; // transformOrigin : center center
     const { w2, h2 } = { w2: transformOrigin.x, h2: transformOrigin.y };
@@ -286,15 +288,19 @@ export default class tweenInCanvas {
   testEnd(tl, callback, params, callbackTimes) {
     const self = this;
     self.nbLoops++;
+    console.log('testEnd');
+    console.log(self.nbLoops, self.maxLoop);
     if (self.nbLoops < self.maxLoop) {
       self.TL.tLs[tl].pause();
-      self.killTicker();
       self.reinitAssets();
+      self.killTicker();
       setTimeout(() => {
         this.clearCanvas();
         self.TL.tLs[tl].restart();
       }, 10);
     } else {
+      self.killTicker();
+      self.TL.tLs[tl].pause();
       if (callback) callback(params);
     }
   }
@@ -308,11 +314,13 @@ export default class tweenInCanvas {
           aa.enable = true;
           aa.renderAtStart = aa.defaultAtStart;
           aa.started = false;
+          this.TL.timelines.main.killTweensOf(aa.id);
         }
       } else {
         a.enable = true;
         a.renderAtStart = a.defaultAtStart;
         a.started = false;
+        this.TL.timelines.main.killTweensOf(a.id);
       }
     }
   }
@@ -331,5 +339,27 @@ export default class tweenInCanvas {
   IDuniq() {
     const id = Math.random().toString(36).substring(7);
     return id;
+  }
+
+  /**
+   *
+   */
+  tickGSAPWhileHidden(value) {
+    if (value === false) {
+      document.removeEventListener('visibilitychange', this.tickGSAPWhileHidden.fn);
+      return clearInterval(this.tickGSAPWhileHidden.id);
+    }
+    const onChange = () => {
+      clearInterval(this.tickGSAPWhileHidden.id);
+      if (document.hidden) {
+        this.TL.GSAP.ticker.lagSmoothing(0); // keep the time moving forward (don't adjust for lag)
+        this.tickGSAPWhileHidden.id = setInterval(this.TL.GSAP.ticker.tick, 500);
+      } else {
+        this.TL.GSAP.ticker.lagSmoothing(1000, 16); // restore lag smoothing
+      }
+    };
+    document.addEventListener('visibilitychange', onChange);
+    this.tickGSAPWhileHidden.fn = onChange;
+    onChange(); // in case the document is currently hidden.
   }
 }

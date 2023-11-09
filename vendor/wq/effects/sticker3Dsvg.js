@@ -9,7 +9,7 @@ export default class sticker3D {
 
   addEffect(name, opt) {
     const width = this.TL.GSAP.getProperty('#' + opt.idName, 'width');
-    this.TL.registerEffect({
+    this.TL.GSAP.registerEffect({
       name: name,
       defaults: {
         duration: 1,
