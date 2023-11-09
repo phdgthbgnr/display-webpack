@@ -1,4 +1,4 @@
-# Webqam - Base de projet bannières
+# Base de projet bannières
 
 ---
 
